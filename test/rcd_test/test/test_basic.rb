@@ -28,4 +28,8 @@ class TestBasic < Minitest::Test
     assert(RcdTest.isnan?(Float::NAN))
   end
 
+  def test_access_global_symbol
+    assert_same Object, RcdTest.access_global_symbol
+  end
+
 end

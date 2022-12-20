@@ -40,6 +40,12 @@ rcdt_darwin_builtin_available_eh(VALUE self)
 #endif
 }
 
+static VALUE
+rcdt_access_global_symbol(VALUE self)
+{
+  return rb_cObject;
+}
+
 void
 Init_rcd_test_ext(void)
 {
@@ -48,4 +54,5 @@ Init_rcd_test_ext(void)
   rb_define_singleton_method(rb_mRcdTest, "darwin_builtin_available?", rcdt_darwin_builtin_available_eh, 0);
   rb_define_singleton_method(rb_mRcdTest, "isinf?", rcdt_isinf_eh, 1);
   rb_define_singleton_method(rb_mRcdTest, "isnan?", rcdt_isnan_eh, 1);
+  rb_define_singleton_method(rb_mRcdTest, "access_global_symbol", rcdt_access_global_symbol, 0);
 }
